@@ -19,5 +19,5 @@ from ERP.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('admin/', home)
+    path('', home)
 ]
