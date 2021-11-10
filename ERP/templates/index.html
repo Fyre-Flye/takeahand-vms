@@ -25,15 +25,24 @@
 				<th scope="col">Nome</th>
 				<th scope="col">Função</th>
 				<th scope="col">ID</th>
+				<th scope="col">Ações</th>
 			  </tr>
 			</thead>
 			<tbody>
+			{% for dbs in db%}
+			
 			  <tr>
-				<th scope="row">1</th>
-				<td>Marcos Antônio</td>
-				<td>Administração</td>
-				<td>0001</td>
+				<th>{{dbs.id}}</th>
+				<td>{{dbs.nome}}</td>
+				<td>{{dbs.funcao}}</td>
+				<td>{{dbs.numero_de_id}}</td>
+				<td>
+					<a href="/view/{{dbs.id}}/" class="btn btn-dark">Visualizar</a>
+					<a href="" class="btn btn-primary">Editar</a>
+					<a href="" class="btn btn-danger">Deletar</a>
+				</td>
 			  </tr>
+			{% endfor %}
 		</table>
 	</div>
 
