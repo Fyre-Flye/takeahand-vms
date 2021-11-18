@@ -1,10 +1,20 @@
 from django.shortcuts import redirect, render
 from ERP.forms import VoluntariosForm
-from ERP.models import Voluntarios 
+from ERP.models import Voluntarios
+from  django.core.paginator import Paginator
 # Create your views here.
 def home(request):
-    data={}
-    data['db'] = Voluntarios.objects.all()
+    data = {}
+    search = request.GET.get('search')
+    if search:
+        data['db'] = Voluntarios.objects.filter(nome__icontains=search)
+    else:
+        data['db'] = Voluntarios.objects.all()
+    
+    #all = Voluntarios.objects.all()
+    #paginator = Paginator (all, 2)
+    #pages = request.GET.get('page')
+    #data['db'] = paginator.get_page(pages)
     return render(request, 'index.html', data)
 
 def form(request):
