@@ -1,5 +1,5 @@
 # takeahand-vms
-Sobre:
+
 Projeto 1 do primeiro período (2021.2) da Cesar School entre turmas de Design e Ciência da Compuração. Take a hand é uma plataforma de gerenciamento de voluntários que visa facilitar a gestão de ONGS que necessitem de voluntários ativos, unindo estagiários, voluntários, empresas e outras instituições envolvividas.
 
 Dependências:
