@@ -3,8 +3,8 @@ Sobre:
 Projeto 1 do primeiro período (2021.2) da Cesar School entre turmas de Design e Ciência da Compuração. Take a hand é uma plataforma de gerenciamento de voluntários que visa facilitar a gestão de ONGS que necessitem de voluntários ativos, unindo estagiários, voluntários, empresas e outras instituições envolvividas.
 
 Dependências:
--Python 3 (última versão)
--Django Framework (Última versão)
+1. Python 3 (última versão)
+2. Django Framework (Última versão)
 
 Intruções para rodar a aplicação:
 1. Clone o projeto em uma nova pasta usando > git clone https://github.com/DjdogeGamer/takeahand-vms/edit/master/README.md 
