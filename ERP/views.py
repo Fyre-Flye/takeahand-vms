@@ -3,6 +3,7 @@ from ERP.forms import VoluntariosForm
 from ERP.models import Voluntarios
 from  django.core.paginator import Paginator
 # Create your views here.
+
 def home(request):
     data = {}
     search = request.GET.get('search')
@@ -15,6 +16,7 @@ def home(request):
     #paginator = Paginator (all, 2)
     #pages = request.GET.get('page')
     #data['db'] = paginator.get_page(pages)
+    
     return render(request, 'index.html', data)
 
 def form(request):

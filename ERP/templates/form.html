@@ -24,8 +24,14 @@
 		{% csrf_token %}	
 		<!--{{form.as_p}}-->
 		<div class="form-group mt-4">Nome: {{form.nome}}</div>
+		<div class="form-group mt-4">Sobrenome: {{form.sobrenome}}</div>
+		<div class="form-group mt-4">E-mail: {{form.email}}</div>
+		<div class="form-group mt-4">CPF: {{form.cpf}}</div>
 		<div class="form-group mt-4">Função: {{form.funcao}}</div>
-		<div class="form-group mt-4">ID: {{form.numero_de_id}}</div>
+		<div class="form-group mt-4">Bairro: {{form.bairro}}</div>
+		<div class="form-group mt-4">Telefone: {{form.telefone}}</div>
+		<div class="form-group mt-4">Horas Semanais: {{form.horas_semanais}}</div>
+		<div class="form-group mt-4">Horas Totais: {{form.horas_contribuidas}}</div>
 		<input type="submit" class="btn btn-success m-4" value="Salvar">
 		</form>
 	</div>
