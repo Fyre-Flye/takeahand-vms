@@ -25,8 +25,13 @@
         <strong>Função: </strong>{{db.funcao}}<br>
 		<strong>Bairro: </strong>{{db.bairro}}<br>
 		<strong>Telefone: </strong>{{db.telefone}}<br>
-		<strong>Horas Semanais: </strong>{{db.horas_semanais}}<br>
-		<strong>Horas Totais: </strong>{{db.horas_contribuidas}}<br>
+		<strong>Horas Semanais Disponíveis: </strong>{{db.horas_semanais}}<br>
+		<strong>Horas Totais Contribuidas: </strong>{{db.horas_contribuidas}}<br>
+		<br>
+		<h3>Certficados:</h3>
+		<strong>Certificado Nível 1: </strong>{% if db.horas_contribuidas > 100 %}Certficado aprovado{%else%}Cerficado não aprovado{%endif%}<br>
+		<strong>Certificado Nível 2: </strong>{% if db.horas_contribuidas > 200 %}Certficado aprovado{%else%}Cerficado não aprovado{%endif%}<br>
+		<strong>Certificado Nível 3: </strong>{% if db.horas_contribuidas > 300 %}Certficado aprovado{%else%}Cerficado não aprovado{%endif%}<br>
 	</div>
 
 
