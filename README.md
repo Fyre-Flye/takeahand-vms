@@ -27,6 +27,7 @@ Intruções para rodar a aplicação:
 6. Clique no link oferecido, ou abra a porta padrão 8000 no seu navegador.
 7. Caso queira fechar a aplicação, use control+c no terminal.
 8. Caso queira navegar pelo banco de dados sqlite3 recomendamos o DB Browser para Sqlite.
+9. Nota: Devido as limitações do sqlite3, não é possível navegar no banco de dados enquanto a aplicação estiver rodando.
 
 Tecnologias Usadas:
 1. Back-end: Django Framework, SQLITE3, AJAX
