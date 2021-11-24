@@ -1,9 +1,7 @@
 from django.shortcuts import redirect, render
 from ERP.forms import VoluntariosForm
 from ERP.models import Voluntarios
-from django.core.paginator import Paginator
 from django.views.generic import TemplateView
-# Create your views here.
 
 def home(request):
     return render(request, 'index.html')
@@ -15,18 +13,15 @@ def crud(request):
         data['db'] = Voluntarios.objects.filter(nome__icontains=search)
     else:
         data['db'] = Voluntarios.objects.all()
-    
-    #all = Voluntarios.objects.all()
-    #paginator = Paginator (all, 2)
-    #pages = request.GET.get('page')
-    #data['db'] = paginator.get_page(pages)
-    
+
     return render(request, 'crud.html', data)
+
 
 def form(request):
     data = {}
     data['form'] = VoluntariosForm()
     return render(request, 'form.html', data)
+
 
 def create(resquest):
     form = VoluntariosForm(resquest.POST or None)
@@ -34,16 +29,19 @@ def create(resquest):
         form.save()
         return redirect('crud')
 
+
 def view(request, pk):
     data = {}
     data['db'] = Voluntarios.objects.get(pk=pk)
     return render(request,'view.html', data)
+
 
 def edit(request, pk):
     data={}
     data['db'] = Voluntarios.objects.get(pk=pk)
     data['form'] = VoluntariosForm(instance=data['db'])
     return render(request, 'form.html', data)
+
 
 def update(request, pk):
     data = {}

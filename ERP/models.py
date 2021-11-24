@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 class Voluntarios(models.Model):
     nome = models.CharField(max_length=30)
     sobrenome = models.CharField(max_length=30)
@@ -12,6 +10,4 @@ class Voluntarios(models.Model):
     telefone = models.CharField(max_length=30) # t
     horas_semanais = models.IntegerField()
     horas_contribuidas = models.IntegerField()
-
-    
 
