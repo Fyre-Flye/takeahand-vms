@@ -1,0 +1,18 @@
+{% load crispy_forms_tags %}
+
+{% block content %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="col-8 m-auto pt-3 pb-3">   
+    <h2>Cadastro</h2>
+</div>
+    <div class="col-8 m-auto pt-3 pb-3">    
+        <a class="btn btn-info" href="/">Voltar</a>
+    </div>
+    <form method="post" class="col-8 m-auto pt-3 pb-3 text-left">
+        {% csrf_token %}
+        {{ form|crispy }}
+    <br>
+        <button class="btn btn-success" type="submit">Cadastrar</button>
+    </form>
+{% endblock %}

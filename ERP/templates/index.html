@@ -1,83 +1,227 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-	<meta charset="UTF-8">
-	<title>Take a hand - Registro de Voluntário</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-
-
-<body>
-	<div class="col-9 m-auto pt-4 pb-4 text-center bg-info">
-		<h1>Take a hand - Registro de Voluntário</h1>
-	</div>
-
-	<div class="col-8 m-auto pt-4 pb-2 text-center">
-		<form method="get">
-			<input type="text" id="search" name="search" class="form-control" placeholder="Buscar...">
-		</form>
-	</div>
-
-	<div class="col-8 m-auto pt-3 pb-2 text-center">
-		<a href="/form" class="btn btn-success">Adicionar</a>
-	</div>
-
-	<div class="col-9 m-auto pt-4 pb-2 text-center">
-		<table class="table">
-			<thead class="thead-dark">
-			  <tr>
-				<th scope="col">#</th>
-				<th scope="col">Nome</th>
-				<th scope="col">Sobrenome</th>
-				<th scope="col">E-mail</th>
-				<th scope="col">CPF</th>
-				<th scope="col">Função</th>
-				<th scope="col">Bairro</th>
-				<th scope="col">Telefone</th>
-				<th scope="col">Horas Semanais</th>
-				<th scope="col">Horas Totais</th>
-				<th scope="col">Ações</th>
-			  </tr>
-			</thead>
-			<tbody>
-			{% for dbs in db%}
-			
-			  <tr>
-				<th>{{dbs.id}}</th>
-				<td>{{dbs.nome}}</td>
-				<td>{{dbs.sobrenome}}</td>
-				<td>{{dbs.email}}</td>
-				<td>{{dbs.cpf}}</td>
-				<td>{{dbs.funcao}}</td>
-				<td>{{dbs.bairro}}</td>
-				<td>{{dbs.telefone}}</td>
-				<td>{{dbs.horas_semanais}}</td>
-				<td>{{dbs.horas_contribuidas}}</td>
-				<td>
-					<a href="/view/{{dbs.id}}/" class="btn btn-dark">Visualizar</a>
-					<a href="/edit/{{dbs.id}}/" class="btn btn-primary">Editar</a>
-					<a href="/delete/{{dbs.id}}/" class="btn btn-danger btnDel">Deletar</a>
-				</td>
-			  </tr>
-			{% endfor %}
-		</table>
-	</div>
-
-
-	<div class="pagination">
-		{% if db.has_previous %}
-			<a href="?page={{db.previous_page_number}}"> </a>
-		{% endif %}
-
-		{{db.number}}
-
-		{% if db.has_next %}
-			<a href="?page={{db.next_page_number}}"> > </a>
-		{% endif %}
-	</div>
-
-     {% load static %}
-	 <script src="{% static 'javascript.js' %}"></script>
- </body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Take a hand - Home</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-light bg-black static-top pt-4 pb-4"> 
+            <div class="container">
+                <a class="navbar-brand text-white m-auto" href="/">Take a hand</a>
+                <a class="navbar-brand text-success m-auto" href="/">Home</a>
+                <a class="navbar-brand text-white m-auto" href="#quem-somos">Quem Somos </a>
+                <a class="navbar-brand text-white m-auto" href="#signup">Trabalho Voluntário</a>
+                <a class="navbar-brand text-white m-auto" href="#signup">Estágios</a>
+                <a class="navbar-brand text-white m-auto" href="#signup">Organizações</a>
+                <a class="navbar-brand text-white m-auto" href="#signup">Empresas</a>
+                <a class="navbar-brand text-white m-auto" href="#signup">Oportunidades</a>
+                <a class="btn btn-success m-auto btn-sm" href="{% url 'account_signup' %}">Cadastro</a>
+                <a class="btn btn-success btn-sm" href="{% url 'account_login' %}">Entrar</a>
+                {% if user.is_authenticated %}
+                <a class="btn btn-info m-auto btn-sm" href="/crud">Dashboard</a>
+                <a class="btn btn-danger btn-sm" href="{% url 'account_logout' %}">Sair</a>
+                {% endif %}
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <div class="text-center text-white">
+                            <!-- Page heading-->
+                            <h1 class="mb-5">Take a Hand - O encontro de mãos capazes de mudar o mundo.</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Icons Grid-->
+        <section class="features-icons bg-light text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-people-fill m-auto text-primary"></i></div> 
+                            <h3>Trabalhos Voluntários</h3>
+                            <p class="lead mb-0">Pequenas ações podem mudar a história e a condição de vida de alguém, além de dar um sentido especial sua vida, tanto pessoal quanto profissional.  Junte-se a essa corrente do bem e conheça todos os benefícios do trabalho voluntário!</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-building m-auto text-primary"></i></div>
+                            <h3>Organizações</h3>
+                            <p class="lead mb-0">Fortalecer o trabalho realizado por ONGs e insituições sem fins lucrativos é uma das nossas principais razões de existir. Traga sua organização para a Take a Hand e te ajudaremos na busca e gerenciamento de pessoas que querem fazer a diferença junto com você.
+                                Estágios</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-person-check-fill m-auto text-primary"></i></div>
+                            <h3>Estágios</h3>
+                            <p class="lead mb-0">Se você é estudante universitário já deve ter ouvido o quão importante é o estágio para o aprendizado e desenvolvimento de habilidades essenciais para sua carreira profissional. Já pensou em encontrar essa oportunidade e torná-la, também, uma possibilidade de fazer a diferença na vida de alguém?</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-briefcase-fill m-auto text-primary"></i></div>
+                            <h3>Empresas</h3>
+                            <p class="lead mb-0">Boas práticas ambientais, sociais e de governança  em seu negócio podem impactar de maneira positiva e grandiosa a sociedade, e ainda impulsionar seus resultados financeiros. A Take a Hand pode te ajudar nessa empreitada onde só há benefícios para todos os envolvidos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Image Showcases-->
+        <section class="showcase">
+            <div class="container-fluid p-0">
+                <div class="row g-0">                                           
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('../static/assets/img/bg-showcase-1.jpg')"></div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h2>Como funciona?</h2>
+                        <p class="lead mb-0">Existimos para  conectar objetivos em comum e que juntos podem transformar  a vida de muita gente!</p>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('../static/assets/img/bg-showcase-2.jpg')"></div>
+                    <div class="col-lg-6 my-auto showcase-text">
+                        <h2></h2>
+                        <p class="lead mb-0">De um lado, uma plataforma que permite que organizações encontrem voluntários e/ ou estudantes a procura de estágio e que atendam aos requisitos necessários para o trabalho necessário.</p>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image:url('../static/assets/img/bg-showcase-3.png')"></div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h2></h2>
+                        <p class="lead mb-0">Do outro, um ambiente que permite às pessoas que desejam contribuir com causas sociais encontrar oportunidades de trabalho voluntário e estágio que se adequem às suas necessidades e limitações.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials-->
+        <section class="testimonials text-center bg-light" id="quem-somos">
+            <div class="container">
+                <h2 class="mb-5">Quem Somos</h2>
+                <div class="row">
+                    <div class="col-lg-4 pt-3">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="{% static 'assets/img/testimonials-01.jpg' %}" alt="..." />
+                            <h5>Artur Teodoro</h5>
+                            <p class="font-weight-light mb-0">Estudante de Ciência da Computação</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 pt-3">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="{% static 'assets/img/testimonials-02.jpg' %}" alt="..." />
+                            <h5>Demetrius Souza</h5>
+                            <p class="font-weight-light mb-0">Estudante de Ciência da Computação</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 pt-3">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="{% static 'assets/img/testimonials-03.jpg' %}" alt="..." />
+                            <h5>Gustavo Henrique</h5>
+                            <p class="font-weight-light mb-0">Estudante de Ciência da Computação</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 pt-3">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="{% static 'assets/img/testimonials-4.jpg' %}" alt="..." />
+                            <h5>Igor Amaral</h5>
+                            <p class="font-weight-light mb-0">Estudante de Ciência da Computação</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 pt-3">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="{% static 'assets/img/testimonials-5.jpg' %}" alt="..." />
+                            <h5>Julia Sousa</h5>
+                            <p class="font-weight-light mb-0">Estudante de Ciência da Computação</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 pt-3">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="{% static 'assets/img/testimonials-6.jpg' %}" alt="..." />
+                            <h5>Larissa Pires</h5>
+                            <p class="font-weight-light mb-0">Estudante de Design</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-16 pt-3">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="{% static 'assets/img/testimonials-7.jpg' %}" alt="..." />
+                            <h5>Maria Eduarda</h5>
+                            <p class="font-weight-light mb-0">Estudante de Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Call to Action-->
+        <section class="call-to-action text-white text-center" id="signup">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <h2 class="mb-4">Pronto para começar? Cadastre-se agora!</h2>
+                        <a class="btn btn-success ml-3" href="/accounts/signup">Cadastrar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer bg-black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                        <ul class="list-inline mb-2">
+                            <li class="list-inline-item text-light"><a href="#!">Sobre</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="#!">Contato</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="#!">Termos de Uso</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="#!">Política de Privacidade</a></li>
+                        </ul>
+                        <p class="text-light small mb-4 mb-lg-0">&copy; Take a Hand 2021. Todos os Direitos Reservados.</p>
+                    </div>
+                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
+                            </li>
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                            </li>
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!"><i class="bi-youtube fs-3"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
 </html>
