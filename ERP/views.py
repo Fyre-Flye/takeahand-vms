@@ -55,7 +55,7 @@ def update(request, pk):
 def delete (request, pk):
     db = Voluntarios.objects.get(pk=pk)
     db.delete()
-    return redirect ('crud')
+    return redirect('crud')
 
 class HomePageView(TemplateView):
     template_name = 'index.html'
