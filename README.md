@@ -19,15 +19,13 @@ Projeto 1 do primeiro período (2021.2) da Cesar School entre turmas de Design e
 * $ pip install django-crispy-forms
 
 Intruções para rodar a aplicação:
-1. Clone o projeto em uma nova pasta usando $ git clone https://github.com/DjdogeGamer/takeahand-vms/edit/master/README.md 
+1. Clone o projeto em uma nova pasta usando **$ git clone https://github.com/DjdogeGamer/takeahand-vms/edit/master/README.md**
 2. Abra um novo terminal, e cerfique-se de que está no caminho da pasta takeahand-vms (./takeahand-vms)
 3. Ative o ambiente virtual em > venv/scripts/activate
 4. Volte para /takeahand-vms (cd ./takeahand-vms)
 5. Rode a aplicação usando $ python ./manage.py runserver
 6. Clique no link oferecido, ou abra a porta padrão 8000 no seu navegador.
 7. Caso queira fechar a aplicação, use control+c no terminal.
-8. Caso queira navegar pelo banco de dados sqlite3 recomendamos o DB Browser para Sqlite.
-* Nota: Devido as limitações do sqlite3, não é possível navegar no banco de dados enquanto a aplicação estiver rodando.
 
 # Tecnologias Usadas:
 * Back-end: Django Framework, SQLITE3, AJAX
