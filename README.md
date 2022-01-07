@@ -30,13 +30,13 @@ Intruções para rodar a aplicação:
 9. Nota: Devido as limitações do sqlite3, não é possível navegar no banco de dados enquanto a aplicação estiver rodando.
 
 Tecnologias Usadas:
-1. Back-end: Django Framework, SQLITE3, AJAX
-2. Front-end: Bootstrap 4, HTML5, CSS3, Javascript
-3. Deploy: Heroku Deployment
-4. IDE/Editor: Visual Studio Code
+* Back-end: Django Framework, SQLITE3, AJAX
+* Front-end: Bootstrap 4, HTML5, CSS3, Javascript
+* Deploy: Heroku Deployment
+* IDE/Editor: Visual Studio Code
 
-Link para apresentação: https://www.canva.com/design/DAEwfUlttpY/4lKRJ3ZTXBJX-JdE4Moh_g/view?utm_content=DAEwfUlttpY&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+* Link para apresentação: https://www.canva.com/design/DAEwfUlttpY/4lKRJ3ZTXBJX-JdE4Moh_g/view?utm_content=DAEwfUlttpY&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
 
-Link para dossiê: https://www.canva.com/design/DAEwfcAl7dU/CrUGiSPo9CHn2aIxw9z82A/view?utm_content=DAEwfcAl7dU&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+* Link para dossiê: https://www.canva.com/design/DAEwfcAl7dU/CrUGiSPo9CHn2aIxw9z82A/view?utm_content=DAEwfcAl7dU&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
 
-Link para o protótipo de alta fidelidade: https://www.figma.com/proto/2TcO8ULGMg5LaSd4lrOHYk/Take-a-Hand---Protótipo?page-id=0%3A1&node-id=140%3A251&viewport=241%2C48%2C1&scaling=min-zoom&starting-point-node-id=140%3A251&hide-ui=1
+* Link para o protótipo de alta fidelidade: https://www.figma.com/proto/2TcO8ULGMg5LaSd4lrOHYk/Take-a-Hand---Protótipo?page-id=0%3A1&node-id=140%3A251&viewport=241%2C48%2C1&scaling=min-zoom&starting-point-node-id=140%3A251&hide-ui=1
