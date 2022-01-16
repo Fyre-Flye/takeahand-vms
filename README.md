@@ -7,7 +7,7 @@ https://user-images.githubusercontent.com/69666481/143258401-207f6e7c-a047-4b87-
 
 
 # Sobre:
-Projeto 1 do primeiro período (2021.2) da Cesar School entre turmas de Design e Ciência da Computação. Take a hand é uma plataforma de gerenciamento de voluntários que visa facilitar a gestão de ONGS que necessitem de voluntários ativos, unindo estagiários, voluntários, empresas e outras instituições envolvidas.
+Projeto 1 do primeiro período (2021.2) da Cesar School entre turmas de Design e Ciência da Computação. Take a hand é uma plataforma de gerenciamento de voluntários que visa facilitar a gestão de ONG's que necessitem de voluntários ativos, unindo estagiários, voluntários, empresas e outras instituições envolvidas.
 
 ## Requisitos:
 * Python 3.0 ou mais recente
@@ -18,7 +18,7 @@ Projeto 1 do primeiro período (2021.2) da Cesar School entre turmas de Design e
 * $ **pip install django-allauth**
 * $ **pip install django-crispy-forms**
 
-### Intruções para rodar a aplicação:
+### Instruções para rodar a aplicação:
 1. Clone o projeto em uma nova pasta usando **$ git clone https://github.com/DjdogeGamer/takeahand-vms.git**
 2. Abra um novo terminal, e cerfique-se de que está no caminho da pasta takeahand-vms (./takeahand-vms)
 3. Ative o ambiente virtual em > venv/scripts/activate
