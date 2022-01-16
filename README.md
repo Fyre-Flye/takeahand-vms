@@ -33,7 +33,7 @@ Projeto 1 do primeiro período (2021.2) da Cesar School entre turmas de Design e
 * Deploy: Heroku Deployment
 * IDE/Editor: Visual Studio Code
 
-### Documentação e Apresentação
+### Documentação e Apresentação:
 
 * Link para apresentação: https://www.canva.com/design/DAEwfUlttpY/4lKRJ3ZTXBJX-JdE4Moh_g/view?utm_content=DAEwfUlttpY&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
 
