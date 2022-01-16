@@ -18,7 +18,7 @@ Projeto 1 do primeiro período (2021.2) da Cesar School entre turmas de Design e
 * $ **pip install django-allauth**
 * $ **pip install django-crispy-forms**
 
-Intruções para rodar a aplicação:
+**Intruções para rodar a aplicação:**
 1. Clone o projeto em uma nova pasta usando **$ git clone https://github.com/DjdogeGamer/takeahand-vms.git**
 2. Abra um novo terminal, e cerfique-se de que está no caminho da pasta takeahand-vms (./takeahand-vms)
 3. Ative o ambiente virtual em > venv/scripts/activate
@@ -32,6 +32,8 @@ Intruções para rodar a aplicação:
 * Front-end: Bootstrap 4, HTML5, CSS3, Javascript
 * Deploy: Heroku Deployment
 * IDE/Editor: Visual Studio Code
+
+# Documentação e Apresentação
 
 * Link para apresentação: https://www.canva.com/design/DAEwfUlttpY/4lKRJ3ZTXBJX-JdE4Moh_g/view?utm_content=DAEwfUlttpY&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
 
