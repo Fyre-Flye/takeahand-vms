@@ -28,7 +28,7 @@ Projeto 1 do primeiro período (2021.2) da Cesar School entre turmas de Design e
 7. Caso queira fechar a aplicação, use control+c no terminal.
 
 ### Tecnologias Usadas:
-* Back-end: Django Framework, SQLITE3, AJAX
+* Back-end: Django Framework, SQLite3, AJAX
 * Front-end: Bootstrap 4, HTML5, CSS3, Javascript
 * Deploy: Heroku Deployment
 * IDE/Editor: Visual Studio Code
