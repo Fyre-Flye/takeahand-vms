@@ -25,7 +25,6 @@ Projeto 1 do primeiro período (2021.2) da Cesar School entre turmas de Design e
 4. Volte para /takeahand-vms (cd ./takeahand-vms)
 5. Rode a aplicação usando **$ python ./manage.py runserver**
 6. Clique no link oferecido, ou abra a porta padrão 8000 no seu navegador.
-7. Caso queira fechar a aplicação, use control+c no terminal.
 
 ### Tecnologias Usadas:
 * Back-end: Django Framework, SQLite3, AJAX
